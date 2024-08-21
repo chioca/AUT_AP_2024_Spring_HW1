@@ -10,6 +10,7 @@
 namespace algebra {
 
 // 矩阵创建函数实现
+// 根据给定的行数、列数、矩阵类型和边界值创建不同类型的矩阵
 template<typename T>
 MATRIX<T> create_matrix(std::size_t rows, std::size_t columns, std::optional<MatrixType> type,
                         std::optional<T> lowerBound, std::optional<T> upperBound) {
@@ -46,6 +47,7 @@ MATRIX<T> create_matrix(std::size_t rows, std::size_t columns, std::optional<Mat
 }
 
 // 矩阵显示函数实现
+// 打印矩阵内容到控制台
 template<typename T>
 void display(const MATRIX<T>& matrix) {
     for (const auto& row : matrix) {
@@ -58,6 +60,7 @@ void display(const MATRIX<T>& matrix) {
 }
 
 // 矩阵相加或相减函数实现
+// 根据给定的操作符（加或减）对两个矩阵进行相应操作
 template<typename T>
 MATRIX<T> sum_sub(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB, std::optional<std::string> operation) {
     std::size_t rows = matrixA.size();
@@ -82,6 +85,7 @@ MATRIX<T> sum_sub(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB, std::optio
 }
 
 // 标量乘法函数实现
+// 对矩阵进行标量乘法操作
 template<typename T>
 MATRIX<T> multiply(const MATRIX<T>& matrix, const T scalar) {
     MATRIX<T> result = matrix;
@@ -94,6 +98,7 @@ MATRIX<T> multiply(const MATRIX<T>& matrix, const T scalar) {
 }
 
 // 矩阵乘法函数实现
+// 对两个矩阵进行矩阵乘法操作
 template<typename T>
 MATRIX<T> multiply(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB) {
     std::size_t rowsA = matrixA.size();
@@ -118,6 +123,7 @@ MATRIX<T> multiply(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB) {
 }
 
 // Hadamard 积函数实现
+// 对两个矩阵进行Hadamard积（元素对应相乘）操作
 template<typename T>
 MATRIX<T> hadamard_product(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB) {
     std::size_t rows = matrixA.size();
