@@ -7,7 +7,7 @@
 
 //命名空间algebra
 class algebra {
-
+public:
     //矩阵类型定义
     template<typename T>
     using MATRIX = std::vector<std::vector<T>>;
@@ -38,6 +38,5 @@ class algebra {
     template<typename T>
     MATRIX<T> hadamard_product(const MATRIX<T>& matrixA, const MATRIX<T>& matrixB);
 
-}
-#include "algebra.cpp"
+};
 #endif //AUT_AP_2024_Spring_HW1

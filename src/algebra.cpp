@@ -11,6 +11,10 @@ namespace algebra {
 
 // 矩阵创建函数实现
 // 根据给定的行数、列数、矩阵类型和边界值创建不同类型的矩阵
+ template<typename T>
+    using MATRIX = std::vector<std::vector<T>>;
+    enum class MatrixType {Zeros, Ones, Identity, Random};
+    
 template<typename T>
 MATRIX<T> create_matrix(std::size_t rows, std::size_t columns, std::optional<MatrixType> type,
                         std::optional<T> lowerBound, std::optional<T> upperBound) {
